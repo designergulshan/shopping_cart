@@ -1,0 +1,21 @@
+<!-- The Edit/Add Modal -->
+<div id="myModal" class="modal">
+
+	<div class="modal-content">
+		<a class="close">&times;</a>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="col-sm-6">
+						{{#p_available_options.colors}}
+							<p>Some text in the Modal.. {{name}}</p>
+						{{/p_available_options.colors}}
+					</div>
+					<div class="col-sm-6">
+						<img src="assets/{{p_img}}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
