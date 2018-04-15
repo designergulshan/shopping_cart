@@ -44,8 +44,8 @@
             {{/price_check}}
             {{^price_check}}
               <span class="item-attr pricing">
-                <span class="prev-price">{{c_currency}}{{p_price}}</span>
-                {{c_currency}}{{p_originalprice}}
+                <span class="prev-price">{{c_currency}}{{p_originalprice}}</span>
+                {{c_currency}}{{p_price}}
               </span>
             {{/price_check}}
           </div>
@@ -94,17 +94,17 @@
             <div class="col-sm-6">Subtotal</div>
             <div class="col-sm-6 total-amount"></div>
           </div>
-          <div class="col-sm-12">
+          <div class="col-sm-12  discount-section">
             <div class="col-sm-6">Promotional code jf10 APPLIED</div>
-            <div class="col-sm-6">-$5.00</div>
+            <div class="col-sm-6 discount"></div>
           </div>
           <div class="col-sm-12">
             <div class="col-sm-6">Estimated Shipping</div>
-            <div class="col-sm-6">Free</div>
+            <div class="col-sm-6 shipping"></div>
           </div>
           <div class="col-sm-12">
             <div class="col-sm-6">Estimated Total</div>
-            <div class="col-sm-6">$45.00</div>
+            <div class="col-sm-6 grand-total"></div>
           </div>
           <hr class="divider" />
 

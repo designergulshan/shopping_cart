@@ -7,9 +7,53 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="col-sm-6">
-						{{#p_available_options.colors}}
-							<p>Some text in the Modal.. {{name}}</p>
-						{{/p_available_options.colors}}
+						<div class="col-sm-12">
+							{{p_name}}
+						</div>
+						<div class="col-sm-12">
+							{{c_currency}}{{p_price}}
+						</div>
+						<div class="col-sm-12">
+							Paisley
+							{{#p_available_options.colors}}
+								<ul>
+									<li class="select-color" data-value="{{hexcode}}" data-title={{name}} style="background: {{hexcode}};">
+									</li>
+								</ul>
+							{{/p_available_options.colors}}
+							<div class="hidden color-error">
+								Please select a color
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="col-sm-6">
+								<select name="sizes" class="sizes">
+									<option value="{{code}}">Size</option>
+									{{#p_available_options.sizes}}
+										<option value="{{code}}">{{name}}</option>
+									{{/p_available_options.sizes}}
+								</select>
+								<div class="hidden size-error">
+									Please select a size
+								</div> 
+							</div>
+							<div class="col-sm-6">
+								<select name="quantity" class="quantity">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							{{#p_editView}}
+								<input type="button" value="Edit" id="edit-cart">
+							{{/p_editView}}
+							{{^p_editView}}
+								<input type="button" value="Add to Bag" id="add-to-bag">
+							{{/p_editView}}
+						</div>
+						<input type="hidden" id="product-id" value="{{p_id}}">
 					</div>
 					<div class="col-sm-6">
 						<img src="assets/{{p_img}}">
