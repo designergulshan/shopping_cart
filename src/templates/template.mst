@@ -1,190 +1,171 @@
 <div id="shopping-cart" class="container">
-			<div class="row"> 
-				<div class="col-sm-9">
-						<hr />						
-						<div class="col-sm-12 title-heading">
-							<div class="col-sm-7">
-								3 Items
-							</div>
-							<div class="col-sm-5">
-								<span class="title">Size</span>
-								<span class="title">Qty</span>
-								<span class="title">Price</span>
-							</div>
-						</div>
-						<hr class="dark-line" />
-						{{#productsInCart}}
-							<div class="col-sm-12 title-heading">
-								<div class="col-sm-3">
-									<img src="assets/{{p_img}}">
-								</div>
-								<div class="col-sm-4">
-									<ul>
-										<li>
-											{{p_name}}
-										</li>
-										<li>
-											{{p_style}}
-										</li>
-										<li style="margin-bottom: 50px;">
-												Colour: {{p_selected_color.name}}
-										</li>
-										<li>
-												<a href=# class="edit" data-modalval="{{editData}}">Edit | </a>
-												<a href=# >Remove |</a>
-												<a href=# >Save for later</a>
-										</li>
-									</ul>
-								</div>
-								<div class="col-sm-5">
-									<span class="title">{{p_selected_size.code}}</span>
-									<span class="title"><input type="text" value="{{p_quantity}}"></span>
-									{{#price_check}}
-										<span class="title">{{c_currency}}{{p_price}}</span>
-									{{/price_check}}
-									{{^price_check}}
-										<span class="title"><ul>
-										<li>{{c_currency}}{{p_price}}</li>
-										<li>{{c_currency}}{{p_originalprice}}</li>
-										</ul></span>
-									{{/price_check}}
-								</div>
-							</div>
-							<hr />  
-						{{/productsInCart}}
-						<hr class="dark-line" />
-				</div>
-				<div class="col-sm-3">
-						border
-				</div>
-				<div class="col-sm-9">
-					<div class="col-sm-12">
-						<div class="col-sm-3">
-							<ul>
-								<li>
-									Need Help or have question?
-								</li>
-								<li>
-									Call customer service at
-									1-800-555-5555
-								</li>
-								<li>
-									Chat with one of
-									our stttylists
-								</li>
-								<li>
-									See return 
-									& exchange policy
-								</li>
-							</ul>
-						</div>
-						<div class="col-sm-9">
-							<div class="col-sm-12">
-								<div class="col-sm-5">
-									Enter promotional code or gift card
-								</div>
-								<div class="col-sm-7">
-									<input type="text">
-									<input type="button" value="Apply">
-								</div>
-							</div>
-							<hr class="dark-line" />
-							<div class="col-sm-12">
-								<div class="col-sm-6">
-									Subtotal
-								</div>
-								<div class="col-sm-6 total-amount">
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="col-sm-6">
-									Promotional code jf10 APPLIED
-								</div>
-								<div class="col-sm-6">
-									-$5.00
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="col-sm-6">
-									Estimated Shipping
-								</div>
-								<div class="col-sm-6">
-									Free
-								</div>
-							</div>
-							<hr />
-							<div class="col-sm-12">
-								<div class="col-sm-6">
-									Estimated Total
-								</div>
-								<div class="col-sm-6">
-									$45.00
-								</div>
-							</div>
-							<hr class="dark-line" />
-							<div class="col-sm-12" style="text-align: right;">
-								<span><a href="#">Continue shopping</a></span>
-								<span><input type="button" value="Checkout"></span>
-							</div>
+  <div class="row"> 
+    <div class="col-left">
+      <div class="items-list">
+        <header class="list-header">
+          <div class="item-view">
+            3 ITEMS
+          </div>
+          <div class="item-desc">
+            <span class="item-attr">Size</span>
+            <span class="item-attr">Qty</span>
+            <span class="item-attr">Price</span>
+          </div>
+        </header>
 
-							<div class="col-sm-12" style="text-align: right;">
-								Secure checkout. Shopping is always safe & secure
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-9">
-					<div class="col-sm-12">
-						<div class="col-sm-10">
-							<h2>
-								Saved for later
-							</h2>
-						</div>
-						<div class="col-sm-2" style="line-height: 65px;">
-							1 item
-						</div>
-					</div>
-					<hr />
-					<div class="col-sm-12 title-heading">
-						<div class="col-sm-7">
-							Items
-						</div>
-						<div class="col-sm-5">
-							<span class="title">Size</span>
-							<span class="title">Qty</span>
-							<span class="title">Price</span>
-						</div>
-					</div>
-					<hr class="dark-line" />
-					<div class="col-sm-12 title-heading">
-						<div class="col-sm-3">
-							<img src="assets/T3.jpg">
-						</div>
-						<div class="col-sm-4">
-								<ul>
-									<li>
-										Solid neck V-neck Cotton
-									</li>
-									<li>
-											Style #: ms13Kt1906
-									</li>
-									<li style="margin-bottom: 50px;">
-											Colour: Blue
-									</li>
-									<li>
-											<a href=# >Edit |</a>
-											<a href=# >Remove |</a>
-											<a href=# >Save for later</a>
-									</li>
-								</ul>
-						</div>
-						<div class="col-sm-5">
-							<span class="title">S</span>
-							<span class="title"><input type="text" value="1"></span>
-							<span class="title">$13.00</span>
-						</div>
-					</div>
-					<hr />
-				</div>
-			</div>
-		</div>
+        {{#productsInCart}}
+        <div class="list-item">
+          <div class="item-view">
+            <figure>
+              <img src="assets/{{p_img}}">
+            </figure>
+
+            <div class="desc">
+              <p>
+                <strong class="title">{{p_name}}</strong><br>
+                style #: {{p_style}}<br>
+                Colour: {{p_selected_color.name}}
+              </p>
+
+              <div class="user-actions">
+                <a href=# class="edit" data-modalval="{{editData}}">Edit</a> |
+                <a href=# >Remove</a> |
+                <a href=# >Save for later</a>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="item-desc">
+            <span class="item-attr">{{p_selected_size.code}}</span>
+            <span class="item-attr"><input type="text" value="{{p_quantity}}"></span>
+            {{#price_check}}
+              <span class="item-attr pricing">{{c_currency}}{{p_price}}</span>
+            {{/price_check}}
+            {{^price_check}}
+              <span class="item-attr pricing">
+                <span class="prev-price">{{c_currency}}{{p_price}}</span>
+                {{c_currency}}{{p_originalprice}}
+              </span>
+            {{/price_check}}
+          </div>
+        </div>
+        {{/productsInCart}}
+
+        <hr class="divider" />
+      </div>
+    </div>
+
+    <div class="col-right">
+      <div class="related-items"></div>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="col-sm-12">
+        <div class="col-sm-3">
+          <ul>
+            <li>
+              Need Help or have question?
+            </li>
+            <li>
+              Call customer service at
+              1-800-555-5555
+            </li>
+            <li>
+              Chat with one of
+              our stttylists
+            </li>
+            <li>
+              See return 
+              &amp; exchange policy
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-9">
+          <div class="col-sm-12">
+            <div class="col-sm-5">Enter promotional code or gift card</div>
+            <div class="col-sm-7">
+              <input type="text">
+              <input type="button" value="Apply">
+            </div>
+          </div>
+          <hr class="divider" />
+          <div class="col-sm-12">
+            <div class="col-sm-6">Subtotal</div>
+            <div class="col-sm-6 total-amount"></div>
+          </div>
+          <div class="col-sm-12">
+            <div class="col-sm-6">Promotional code jf10 APPLIED</div>
+            <div class="col-sm-6">-$5.00</div>
+          </div>
+          <div class="col-sm-12">
+            <div class="col-sm-6">Estimated Shipping</div>
+            <div class="col-sm-6">Free</div>
+          </div>
+          <div class="col-sm-12">
+            <div class="col-sm-6">Estimated Total</div>
+            <div class="col-sm-6">$45.00</div>
+          </div>
+          <hr class="divider" />
+
+          <div class="col-sm-12" style="text-align: right;">
+            <span><a href="#">Continue shopping</a></span>
+            <span><input type="button" value="Checkout"></span>
+          </div>
+
+          <div class="col-sm-12" style="text-align: right;">
+            Secure checkout. Shopping is always safe & secure
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="col-sm-12">
+        <div class="col-sm-10">
+          <h2>
+            Saved for later
+          </h2>
+        </div>
+        <div class="col-sm-2" style="line-height: 65px;">
+          1 item
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="col-sm-7">
+          Items
+        </div>
+        <div class="col-sm-5">
+          <span class="title">Size</span>
+          <span class="title">Qty</span>
+          <span class="title">Price</span>
+        </div>
+      </div>
+      <hr class="divider" />
+      
+      <div class="list-item">
+        <div class="col-sm-3">
+          <img src="assets/T3.jpg">
+        </div>
+        <div class="col-sm-4">
+          <ul>
+            <li>Solid neck V-neck Cotton</li>
+            <li>Style #: ms13Kt1906</li>
+            <li style="margin-bottom: 50px;">Colour: Blue</li>
+            <li>
+              <a href=# >Edit |</a>
+              <a href=# >Remove |</a>
+              <a href=# >Save for later</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-5">
+          <span class="title">S</span>
+          <span class="title"><input type="text" value="1"></span>
+          <span class="title">$13.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
