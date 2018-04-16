@@ -7,10 +7,10 @@ let actualData = []
 $(() => {
   let total_price = 0
   let currency
+  let cartLength = 0;
+
   let createEditData = obj => { 
     $.each(obj.productsInCart, (index, ob) => {
-      total_price = total_price + parseInt(ob.p_price);
-      currency = ob.c_currency;
       obj.productsInCart[index]['editData'] = JSON.stringify({
         p_id: ob.p_id,
         p_available_options: ob.p_available_options,
@@ -22,13 +22,17 @@ $(() => {
         p_editView: true  
       }); 
     }); 
-    return obj;
+    return obj
   }
 
   const updateCheckoutDetails = actualData => {
-    let cartLength = 0;
+    total_price = 0
+    cartLength = 0
+
     $.each(actualData.productsInCart, (key, value) => {
-      cartLength += value.p_quantity;
+      cartLength += value.p_quantity
+      total_price = total_price + parseInt(value.p_quantity * value.p_price) 
+      currency = value.c_currency
     })
 
     let discount = 0
@@ -47,7 +51,7 @@ $(() => {
       $('.discount-section').addClass('hidden');
     }
 
-    const grandTotal  = (shipping + total_price - ( total_price * discount / 100 )).toFixed(2)
+    const grandTotal  = (shipping + (total_price - ( total_price * discount / 100 ))).toFixed(2)
     shipping = shipping === 0 ? 'FREE' : shipping
     
     $('.total-amount').html(`${currency}${total_price}`)
