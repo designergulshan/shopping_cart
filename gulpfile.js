@@ -30,7 +30,7 @@ gulp.task('scripts', () =>
 
 // Sass Task
 gulp.task('sass', () =>
-    gulp.src('src/sass/**/*.scss')
+    gulp.src('src/sass/**/styles.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 4 versions'))
         .pipe(gulp.dest('src/css'))
@@ -55,7 +55,7 @@ gulp.task('browser-sync', () =>
 // Watch Tasks
 gulp.task('watch', () => {
     gulp.watch('src/js/!(bundle.js)', ['scripts']);
-    gulp.watch('src/sass/**', ['sass']);
+    gulp.watch('src/sass/**/*.scss', ['sass']);
     gulp.watch('src/index.html', ['html']);
     gulp.watch('src/templates/**', ['scripts']);
     gulp.watch('src/data/**', ['scripts']);

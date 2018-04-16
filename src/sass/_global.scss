@@ -1,0 +1,48 @@
+sup {
+  font-size: 75%;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.pull-right {
+  float: right;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $textColor;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input {
+  color: $textColor;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.color-selection {
+  border: 1px solid #000;
+}
+
+.select-color {
+  width: 20px; 
+  height: 20px;
+}
+
+.color-error, .size-error {
+  color: red;
+}

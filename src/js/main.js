@@ -54,10 +54,10 @@ $(() => {
     const grandTotal  = (shipping + (total_price - ( total_price * discount / 100 ))).toFixed(2)
     shipping = shipping === 0 ? 'FREE' : shipping
     
-    $('.total-amount').html(`${currency}${total_price}`)
-    $('.discount').html(`-${currency}${discount}%`)
+    $('.total-amount').html(`<sup>${currency}</sup>${total_price}`)
+    $('.discount').html(`-<sup>${currency}</sup>${discount}%`)
     $('.shipping').html(`${shipping}`)
-    $('.grand-total').html(`${currency}${grandTotal}`)
+    $('.grand-total').html(`<sup>${currency}</sup>${grandTotal}`)
   }
 
   const loadUser = () => {
