@@ -154,6 +154,7 @@ header h1 {
   #shopping-cart .divider {
     border: 4px solid #ededed; }
   #shopping-cart .checkout-pane .items-list {
+    border-top: 0;
     margin-bottom: 55px;
     border-bottom: 1px solid #e5e5e5; }
 
@@ -178,21 +179,77 @@ header h1 {
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */ }
   #model .modal .modal-content {
-    display: table;
-    background-color: #fefefe;
+    width: 80%;
     margin: auto;
-    padding: 20px;
+    display: table;
+    padding: 60px 20px;
+    box-sizing: border-box;
     border: 1px solid #888;
-    width: 80%; }
+    background-color: #fefefe;
+    position: relative; }
     #model .modal .modal-content .close {
       color: #aaaaaa;
-      float: right;
       font-size: 28px;
-      font-weight: bold; }
+      font-weight: bold;
+      position: absolute;
+      right: 20px;
+      top: 20px; }
       #model .modal .modal-content .close:hover, #model .modal .modal-content .close:focus {
         color: #000;
         text-decoration: none;
         cursor: pointer; }
+
+#model .product-details {
+  width: 30%;
+  float: left;
+  padding: 0 10%;
+  text-align: center; }
+  #model .product-details .title {
+    padding-top: 20px;
+    text-transform: uppercase;
+    border-top: 6px solid #e5e5e5; }
+  #model .product-details .pricing {
+    font-size: 50px; }
+  #model .product-details .patterns {
+    font-size: 12px;
+    margin: 30px 0 15px;
+    text-transform: uppercase; }
+    #model .product-details .patterns ul {
+      padding: 0;
+      margin: 10px 0 0; }
+      #model .product-details .patterns ul li {
+        cursor: pointer;
+        display: inline-block;
+        border: 1px solid #ddd; }
+        #model .product-details .patterns ul li.color-selection {
+          border-color: #000; }
+  #model .product-details .fields select {
+    width: 46%;
+    float: left;
+    margin: 0 2%;
+    padding: 7px 7px 8px;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5; }
+  #model .product-details input[type='button'] {
+    width: 96%;
+    border: none;
+    padding: 13px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: #ff6600;
+    text-transform: uppercase;
+    box-sizing: border-box; }
+  #model .product-details a {
+    font-size: 12px; }
+
+#model .product-view {
+  width: 50%;
+  float: left; }
+  #model .product-view img {
+    display: block;
+    margin: 70px auto; }
 
 .checkout-pane {
   border-top: 6px solid #ededed;
@@ -272,6 +329,7 @@ header h1 {
       border: none;
       width: 118px;
       padding: 13px;
+      cursor: pointer;
       background: #ff6600;
       text-transform: uppercase;
       -ms-box-sizing: border-box;

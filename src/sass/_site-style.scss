@@ -165,6 +165,7 @@ header {
   }
   .checkout-pane {
     .items-list {
+      border-top: 0;
       margin-bottom: 55px;
       border-bottom: 1px solid $borderColor;
     }
@@ -184,26 +185,92 @@ header {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  
     .modal-content {
-      display: table;
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
       width: 80%;
-  
+      margin: auto;
+      display: table;
+      padding: 60px 20px;
+      box-sizing: border-box;
+      border: 1px solid #888;
+      background-color: #fefefe;
+      position: relative;
       .close {
         color: #aaaaaa;
-        float: right;
         font-size: 28px;
         font-weight: bold;
+        position: absolute;
+        right: 20px;
+        top: 20px;
         &:hover, &:focus {
           color: #000;
           text-decoration: none;
           cursor: pointer;
         }
       }
+    }
+  }
+  .product-details {
+    width: 30%;
+    float: left;
+    padding: 0 10%;
+    text-align: center;
+    .title {
+      padding-top: 20px;
+      text-transform: uppercase;
+      border-top: 6px solid $borderColor;
+    }
+    .pricing {
+      font-size: 50px;
+    }
+    .patterns {
+      font-size: 12px;
+      margin: 30px 0 15px;
+      text-transform: uppercase;
+      ul {
+        padding: 0;
+        margin: 10px 0 0;
+        li {
+          cursor: pointer;
+          display: inline-block;
+          border: 1px solid #ddd;
+          &.color-selection {
+            border-color: #000;
+          }
+        }
+      }
+    }
+    .fields {
+      select {
+        width: 46%;
+        float: left;
+        margin: 0 2%;
+        padding: 7px 7px 8px;
+        box-sizing: border-box;
+        border: 1px solid #e5e5e5;
+      }
+    }
+    input[type='button'] {
+      width: 96%;
+      border: none;
+      padding: 13px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      background: #ff6600;
+      text-transform: uppercase;
+      box-sizing: border-box;
+    }
+    a {
+      font-size: 12px;
+    }
+  }
+  .product-view {
+    width: 50%;
+    float: left;
+    img {
+      display: block;
+      margin: 70px auto;
     }
   }
 }
@@ -308,6 +375,7 @@ header {
       border: none;
       width: 118px;
       padding: 13px;
+      cursor: pointer;
       background: $secondaryColor;
       text-transform: uppercase;
       -webkit-box-sizing: border-box;

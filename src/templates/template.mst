@@ -167,9 +167,9 @@
                 </p>
 
                 <div class="user-actions">
-                  <a href="#" class="edit">Edit</a> |
-                  <a href="#"><strong>×</strong> Remove</a> |
-                  <a href="#">Save for later</a>
+                  <a href="javascript:void(0)" class="edit">Edit</a> |
+                  <a href="javascript:void(0)"><strong>×</strong> Remove</a> |
+                  <a href="javascript:void(0)">Save for later</a>
                 </div>
               </div>
             </div>
