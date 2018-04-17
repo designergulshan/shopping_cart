@@ -19,7 +19,8 @@ $(() => {
         p_img: ob.p_img,
         c_currency: ob.c_currency,
         p_quantity: ob.p_quantity,
-        p_editView: true  
+        p_editView: true,
+        p_viewdetails: false  
       }); 
     }); 
     return obj
@@ -76,22 +77,43 @@ $(() => {
   }
   loadUser()
 
-  const loadModel = data => { 
+  const loadModel = (data, edit) => { 
     $.get('templates/model.mst', (template) => {
       const rendered = Mustache.render(template, data)
       document.getElementById('model').innerHTML = rendered
+      const editCart = $('#edit-cart')
+      const viewCart = $('#add-to-bag')
+
       $('#model').removeClass('hidden');
+      
+      if(edit) {
+        editCart.removeClass('hidden')
+        viewCart.addClass('hidden')
+      }
+      else {
+        editCart.addClass('hidden')
+        viewCart.removeClass('hidden')
+      }
+      
     }).fail(() => console.error('template not found'))
   }
 
   $(document).on('click', 'a', e => {
-    const $target = $(e.target);
-    const event = $target.attr('class')
+    const $target = $(e.target)
+    const event = $target.attr('id')
+    
+    let edit = true
 
     switch (event) {
       case 'edit':
+        edit = true
         var dataObj = $target.data('modalval')
-        loadModel(dataObj);
+        loadModel(dataObj, edit)
+        break;
+      case 'view-details':
+        edit = false
+        var dataObj = $target.data('modalval')
+        loadModel(dataObj, edit)
         break;
       case 'close':
        $('#model').addClass('hidden')

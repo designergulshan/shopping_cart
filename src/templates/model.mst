@@ -2,7 +2,7 @@
 <div id="myModal" class="modal">
 
 	<div class="modal-content">
-		<a class="close">&times;</a>
+		<a class="close" id="close">&times;</a>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -46,12 +46,8 @@
 							</div>
 						</div>
 						<div class="col-sm-12">
-							{{#p_editView}}
-								<input type="button" value="Edit" id="edit-cart">
-							{{/p_editView}}
-							{{^p_editView}}
-								<input type="button" value="Add to Bag" id="add-to-bag">
-							{{/p_editView}}
+							<input type="button" class="hidden" value="Edit" id="edit-cart">
+							<input type="button" class="hidden" value="Add to Bag" id="add-to-bag">
 						</div>
 						<input type="hidden" id="product-id" value="{{p_id}}">
 					</div>

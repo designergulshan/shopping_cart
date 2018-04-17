@@ -28,7 +28,7 @@
               </p>
 
               <div class="user-actions">
-                <a href=# class="edit" data-modalval="{{editData}}">Edit</a> |
+                <a href=# class="edit" id="edit" data-modalval="{{editData}}">Edit</a> |
                 <a href=# ><strong class="icon">&times;</strong> Remove</a> |
                 <a href=# >Save for later</a>
               </div>
@@ -67,7 +67,7 @@
           <sup>$</sup>39
         </div>
 
-        <a href="javascript:void(0)" class="btn">view details</a>
+        <a href="javascript:void(0)" class="btn" id="view-details" data-modalval="{{productsInCart.0.editData}}">view details</a>
       </div>
     </div>
   </div>
